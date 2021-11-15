@@ -14,6 +14,14 @@ public class CarDetalis implements java.io.Serializable {
     private String parkingSpot;
     private String username;
 
+    public String getParkingSpot() {
+        return parkingSpot;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     public CarDetalis(Integer id, String licensePlate, String parkingSpot, String username) {
         this.id = id;
         this.licensePlate = licensePlate;
