@@ -4,7 +4,7 @@
     Author     : Larisa
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="${pageContext.request.contextPath}">Parking Lot</a>
