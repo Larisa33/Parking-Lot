@@ -45,8 +45,8 @@
                 </div>
             </div>
         </div>
-        <hr class="my-4">
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+        <hr class="my-3 w-50">
+        <button class="w-50 btn btn-primary btn-lg" type="submit">Save</button>
     </form>
 
 

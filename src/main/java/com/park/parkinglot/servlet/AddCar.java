@@ -24,15 +24,14 @@ import javax.servlet.http.HttpServletResponse;
  * @author Larisa
  */
 @ServletSecurity(value=@HttpConstraint(rolesAllowed={"AdminRole"}))
-@WebServlet(name = "AddCar", urlPatterns = {"/AddCar"})
+@WebServlet(name = "AddCar", urlPatterns = {"/Cars/AddCar"})
 public class AddCar extends HttpServlet {
-
+    
     @Inject
     UserBean userBean;
     
     @Inject
-    CarBean carBean;
-    
+   CarBean carBean;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -71,12 +70,10 @@ public class AddCar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        List<UserDetails> users = userBean.getAllUsers();
+        //processRequest(request, response);
+        List<UserDetails> users=userBean.getAllUsers();
         request.setAttribute("users",users);
-        
-         request.getRequestDispatcher("/WEB-INF/pages/addCar.jsp").forward(request, response);
-      //  processRequest(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/addCar.jsp").forward(request, response);
     }
 
     /**
@@ -90,16 +87,14 @@ public class AddCar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String licensePlate = request.getParameter("license_plate");
-        String parkingSpot  = request.getParameter("parking_spot");
-        int ownerId= Integer.parseInt(request.getParameter("owner_id"));
+        String licensePlate=request.getParameter("license_plate");
+        String parkingSpot=request.getParameter("parking_spot");
+        int ownerId=Integer.parseInt(request.getParameter("owner_id"));
         
         carBean.createCar(licensePlate, parkingSpot, ownerId);
-        
         response.sendRedirect(request.getContextPath()+"/Cars");
         
-        
-        //processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**

@@ -4,7 +4,7 @@
  */
 package com.park.parkinglot.servlet;
 
-import com.park.parkinglot.common.CarDetalis;
+import com.park.parkinglot.common.CarDetails;
 import com.park.parkinglot.ejb.CarBean;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -80,7 +80,7 @@ public class Cars extends HttpServlet {
        request.setAttribute("activePage", "Cars");
        request.setAttribute("numberOfFreeParkingSpots", 10);
 
-       List<CarDetalis> cars= carBean.getAllCars();
+       List<CarDetails> cars= carBean.getAllCars();
        request.setAttribute("cars",cars);
 
        request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request, response);

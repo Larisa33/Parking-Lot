@@ -8,7 +8,7 @@ package com.park.parkinglot.common;
  *
  * @author Larisa
  */
-public class CarDetalis implements java.io.Serializable {
+public class CarDetails implements java.io.Serializable {
     private Integer id;
     private String licensePlate;
     private String parkingSpot;
@@ -22,7 +22,7 @@ public class CarDetalis implements java.io.Serializable {
         return username;
     }
 
-    public CarDetalis(Integer id, String licensePlate, String parkingSpot, String username) {
+    public CarDetails(Integer id, String licensePlate, String parkingSpot, String username) {
         this.id = id;
         this.licensePlate = licensePlate;
         this.parkingSpot = parkingSpot;
